@@ -1,8 +1,8 @@
 <?php
-/* 
-Author: Sergio Luna Martín
-Date: 29/09/2023
-Ejercicio 2: Muestra los primeros 3 números pares.
+/** 
+*@author: Sergio Luna Martín
+*Date: 29/09/2023
+*Ejercicio 2: Muestra los primeros 3 números pares.
 */
 
 //Variables

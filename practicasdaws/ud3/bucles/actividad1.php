@@ -1,8 +1,8 @@
 <?php
-/* 
-Author: Sergio Luna Martín
-Date: 29/09/2023
-Ejercicio 1: Muestra los números del 1 al 10.
+/** 
+*@author: Sergio Luna Martín
+*Date: 29/09/2023
+*Ejercicio 1: Muestra los números del 1 al 10.
 */
 
 //Variables

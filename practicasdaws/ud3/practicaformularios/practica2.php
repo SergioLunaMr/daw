@@ -5,48 +5,25 @@ Date: 29/09/2023
 Práctica 2: Tablas de multiplicar del 1 al 10 con inputs aleatorios
 */
 
-//Variables
+include("config.php");
 
-//Constante con el número de inputs que habrá
-define("numinputs", 5);
+$aciertos = 0;
+$formenviado = false;
 
-$input1;
-$input2;
-$input3;
-$input4;
-$input5;
+$valoresrecogidos = array();
+$valoresaleatorios = array();
 
-$header = "<head><style>
-    td{
-         border: black, solid, 1px;
-    }
-    </style><head>";
+//Variables utilizadas
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $input[] = $_POST["input1"];
-    $input[] = $_POST["input2"];
-    $input[] = $_POST["input3"];
-    $input[] = $_POST["input4"];
-    $input[] = $_POST["input5"];
-    $arrayrecibido1= $_POST["arrayi"];
-    $arrayrecibido2= $_POST["arrayj"];
-
-    var_dump($_POST);
-
-    for($i=0;$i<5;$i++){
-        $resultado=(int)$arrayi[$i] * (int)$arrayj[$i];
-        if($resultado==$input[$i]){
-            echo "El resultado del ". $i+1 . "º input es acertado.";
-        }
-        else {
-            echo "El resultado del ". $i+1 . "º input es erróneo.";
+if (isset($_POST["submit"])) {
+    $formenviado = true;
+    foreach ($_POST["num"] as $fila => $valor1) {
+        foreach ($valor1 as $columna => $valor2) {
+            $valoresaleatorios[] = array($fila, $columna);
+            $valoresActuales[$fila][$valor] = $valor2;
         }
     }
-
-    echo $header;
-    echo $input1 . $input2 . $input3 . $input4 . $input5;
-} 
-else {
+} else {
     $html = "<form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "'><table><tr><td class=\"head\"></td><td class=\"head\">1</td><td class=\"head\">2</td><td class=\"head\">3</td><td class=\"head\">4</td>
 <td class=\"head\">5</td><td class=\"head\">6</td><td class=\"head\">7</td><td class=\"head\">8</td>
 <td class=\"head\">9</td><td class=\"head\">10</td></tr>";
@@ -81,21 +58,24 @@ else {
         $html = $html . "</tr>";
     }
     $html = $html . "</table><button>Enviar</button></form>";
+}
+//Vista
+?>
 
-    //Vista
-    ?>
+<head>
+    <style>
+        td {
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
 
     <head>
         <style>
             td {
-                border-color: black;
-                border-style: solid;
+                border: black, solid, 1px;
             }
         </style>
-
-        <head>
-
-            <?php
-            echo $header;
-            echo $html;
-} ?>
+        <?php
+        echo $html;
+        ?>
