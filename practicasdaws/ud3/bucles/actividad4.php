@@ -28,16 +28,23 @@
 <body>
     <?php
     echo "<table><tr>";
-    for ($i = 0; $i <= 255; $i += 2) {
-        echo "<td style='background-color: rgb($i,";
-        for ($j = 0; $j <= 255; $j += 2) {
-            echo "$j,";
-            for ($k = 0; $k <= 255; $k += 2) {
-                echo "$k)'>" . "$i,$j,$k</td>";
+     for ($i = 0; $i <= 255; $i += 20) {
+         echo "<td style='background-color: rgb(" . $i . ",";
+         for ($j = 0; $j <= 255; $j += 20) {
+             echo $j . ",";
+             for ($k = 0; $k <= 255; $k += 20) {
+                echo $k. ")'>" . "$i,$j,$k</td>";
+            }
+        }
+     }
+     echo "</table>";
+    for($i=0;$i<10;$i++){
+        for($j=0;$j<10;$j++){
+            for($k=0;$k<10;$k++){
+                echo $i . $j . $k . "<br>";
             }
         }
     }
-    echo "</table>";
     ?>
 </body>
 
