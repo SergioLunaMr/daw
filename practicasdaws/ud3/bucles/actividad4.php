@@ -22,7 +22,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta name='author' content='SergioLunaMartín'>
     <script src='main.js'></script>
-    <title>SergioLunaMartín</title>
+    <title>Actividad 4</title>
 </head>
 
 <body>
