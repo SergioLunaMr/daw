@@ -1,0 +1,13 @@
+table, td, tr {
+    border-style: solid;
+    border: 1px, black;
+    border-collapse: collapse;
+}
+
+.actual {
+    background-color: green;
+}
+
+.festivo {
+    background-color: red;
+}

@@ -1,18 +1,10 @@
 <?php
 /** 
  *@author: Sergio Luna Martín
- *Date: 18/10/2023
- *Escriba una página que permita crear una cookie de duración limitada,
- * comprobar el estado de la cookie y destruirla.
+ *Date: 16/10/2023
+ *Actividad guiada: Crear un formulario con Usuario y Contraseña que permita recordarlo. 
+ * En caso de que lo recuerde, cargar directamente los datos mediante cookies.
  */
-include("config.php");
-if (isset($_COOKIE["temporal"])) {
-    $html="La cookie temporal no está activa.";
-}
-else {
-    $html="Actualmente la cookie 'temporal' no está activa.";
-}
-
 if (isset($_COOKIE["user"])) {
     $user = $_COOKIE["user"];
     $password = $_COOKIE["password"];
@@ -41,11 +33,7 @@ if (isset($_POST["enviar"])) {
 
 <body>
     <form method="post" action="">
-        <?php
-        
-
-        ?>
-        <label>Crear una cookie: <input type="text" name="user" value="<?php echo $user ?>"></label><br>
+        <label>User:<input type="text" name="user" value="<?php echo $user ?>"></label><br>
         <label>Password:<input type="password" name="password" value="<?php echo $password ?>"></label><br>
         <label>Recordar usuario:<input type="checkbox" name="remindme"></label><br>
         <input type="submit" name="enviar" value="Enviar">
