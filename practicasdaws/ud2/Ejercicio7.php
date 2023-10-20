@@ -1,3 +1,9 @@
+<div class="container my-4">
+    <div class="row my-4">
+        <div class="col"><a href="../daws.html">Volver atrás -></a></div>
+    </div>
+    <div>Código: <a href="https://github.com/SergioLunaMr/Practica2DAWS/blob/master/Ejercicio7.php">GitHub</a></div>
+</div>
 <?php
 /*
 author: Sergio Luna Martín

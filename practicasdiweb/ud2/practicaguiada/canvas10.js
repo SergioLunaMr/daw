@@ -16,17 +16,25 @@ window.addEventListener("DOMContentLoaded", function () {
     let contexto = cargaContextoCanvas("micanvas");
 
     if (contexto) {
-        let img = new Image();
-        img.src="image.jpg";
-        img.addEventListener("load", function (){
-            //Imagen original
-            contexto.drawImage(img,0,0);
-            //Imagen escalada
-            contexto.drawImage(img,0,1000,400,100);
-            //Imagen recortada
-            contexto.drawImage(img, 300,300,150,150,0,1100,150,150);
-            //Imagen redimensionada
-            contexto.drawImage(img, 300,300,150,150,0,1300,400,400);
-        })
+let x=10;
+let y=10;
+let width=200;
+let height=200;
+
+contexto.fillStyle="#f00";
+contexto.rotate((Math.PI/180)*30);
+
+
+
+x=310;
+y=10;
+let centro_x= x +0.5*width;
+let centro_y= y+0.5*height;
+
+contexto.fillStyle="#f00";
+contexto.fillRect(x,y,width,height);
+
+contexto.translate(centro_x,centro_y);
+
     }
 });
