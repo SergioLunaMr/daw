@@ -1,0 +1,12 @@
+.error {
+    color:red;
+}
+
+.block {
+    display: inline-block;
+    width: 20%;
+}
+
+.verboinsertar {
+    width: 60px;
+}
