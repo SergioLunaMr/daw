@@ -14,80 +14,32 @@ function cargaContextoCanvas(idCanvas) {
 }
 
 window.addEventListener("DOMContentLoaded", function () {
-    //Circunferencia
-    let contexto = cargaContextoCanvas("micanvas");
-    this.setInterval(stateHandler, 100, contexto);
-    //Translate
-    //Pintamos un rectángulo
-    // contexto.fillStyle = "#ff0000";
-    // contexto.fillRect(0, 0, 20, 20);
+    var canvas = document.getElementById("miCanvas");
+    var ctx = canvas.getContext("2d");
 
-    // //Trasladamos el "contexto"
-    // //Muy importante, trasladamos toco el contexto entero. Es decir, el punto de inicio de TODO el contexto se traslada del 0,0 al 100,100
-    // contexto.translate(100, 50);
+    var x = 50;  // Posición inicial del rectángulo
+    var velocidad = 2; // Velocidad de desplazamiento
 
-    // //Pintamos otro rectángulo
-    // contexto.fillStyle = "rgba(0,0,255,0.5)";
-    // contexto.fillRect(0, 0, 20, 20);
+    // Función para dibujar el rectángulo
+    function dibujarRectangulo() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // //Pintamos otro rectángulo
-    // contexto.save();
+        ctx.fillStyle = "blue";
+        ctx.fillRect(x, 50, 50, 30);
 
-    // contexto.fillStyle = "green";
-    // contexto.fillRect(10, 10, 100, 100);
+        x += velocidad;
 
-    // contexto.restore();
-
-    // contexto.fillRect(10,0,20,20);
-
-});
-
-function stateHandler(contexto) {
-    if (contexto) {
-        switch (state) {
-            case 1: {
-                state=buttonState1(contexto);
-                break;
-            };
-            case 2: {
-                state=buttonState2(contexto);
-                break;
-            };
-            case 3: {
-                state=buttonState3(contexto);
-                break;
-            };
-            case 4: {
-                state=buttonState4(contexto);
-                break;
-            };
+        if (x + 50 > canvas.width || x < 0) {
+            velocidad = -velocidad; // Cambia la dirección cuando llega a los bordes
         }
     }
-}
 
-function buttonState1(contexto) {
-    contexto.fillStyle = "#2388";
-    contexto.fillRect(10,10, 20, 20, 0.5);
-    contexto.rotate(10* Math.PI / 220);
-    return 2;
-}
-    function buttonState2(contexto) {
-    contexto.fillStyle = "#2388";
-    contexto.fillRect(10, 10, 20, 20, 0.5);
-    contexto.rotate(20* Math.PI / 220);
-    return 3;
-}
+    // Función de animación
+    function animar() {
+        dibujarRectangulo();
+        requestAnimationFrame(animar);
+    }
 
-function buttonState3(contexto) {
-    contexto.fillStyle = "#2388";
-    contexto.fillRect(10, 10, 20, 20, 0.5);
-    contexto.rotate(10* Math.PI / 220);
-    return 4;
-}
-
-function buttonState4(contexto) {
-    contexto.fillStyle = "#2388";
-    contexto.fillRect(10, 10, 20, 20, 0.5);
-    contexto.rotate(20* Math.PI / 220);
-    return 2;
-}
+    // Iniciar la animación
+    animar();
+});
