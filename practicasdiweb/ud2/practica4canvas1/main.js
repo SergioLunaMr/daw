@@ -15,17 +15,16 @@ function cargaContextoCanvas(idCanvas) {
 
 window.addEventListener("DOMContentLoaded", function () {
     var canvas = document.getElementById("miCanvas");
-    var ctx = canvas.getContext("2d");
 
     var x = 50;  // Posición inicial del rectángulo
     var velocidad = 2; // Velocidad de desplazamiento
 
     // Función para dibujar el rectángulo
     function dibujarRectangulo() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        contexto.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = "blue";
-        ctx.fillRect(x, 50, 50, 30);
+        contexto.fillStyle = "blue";
+        contexto.fillRect(x, 50, 50, 30);
 
         x += velocidad;
 
