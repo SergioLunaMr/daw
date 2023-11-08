@@ -1,15 +1,14 @@
 body {
-    font-family: 'Robot', sans-serif;
     font-size: 16px;
 }
 
 #web {
     width: 90%;
-    margin: 0 auto; /*Con esto se asegura que habrá un 5% a derecha y un 5% a la izquierda*/
+    margin: 0 auto; 
 }
 
 header {
-    background-color: #666;
+    background-color: rgb(28, 35, 107);
     color: white;
     padding: 1px;
     text-align: center;;
@@ -18,7 +17,7 @@ header {
 nav {
     padding: 2px;
     text-align: center;
-    background-color: #666;
+    background-color: rgb(28, 35, 107);
 }
 
 nav ul {
@@ -31,14 +30,15 @@ nav ul li {
     display: inline-block;
     width: 350px;
     color: white;
-    border: 1px outset #FFF; /*outser: hacia fuera*/
+    border: 1px outset #FFF;
     padding: 0.5rem;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 nav ul li:hover {
-    box-shadow: 1px 2px 5px #B3E5FC;
-    transform: scale(1.01,1.01);
+    border: 1px outset gray;
+
 }
 
 nav ul li a {
@@ -61,24 +61,21 @@ main {
 main section {
     padding: 1%;
     margin: 20px 1%;
-    box-shadow: 1px 1px 2px 1px rgba(128,128,128,0.5);
-    width: 46%;
+    border: 1px outset gray;
+    width: 45%;
     display: inline-block;
     vertical-align: top;
 }
 
 main section h2 {
-    font-family: 'Rancho', 'cursive';
     text-align: center;
     padding: 1px;
     font-size: 25px;
-    color: #666;
 }
 
 main article {
     margin: 2rem;
-    border: 1px solid rgba(128,128,128,0.5);
-    box-shadow: 1px 1px 2px 1px rgba(128,128,128,0.5);
+    border: 1px solid gray;
     text-align: justify;
 }
 
@@ -99,9 +96,8 @@ aside {
 aside section {
     text-align: center;
     margin: 2px;
-    background-color: #666;
+    background-color: rgb(28, 35, 107);
     min-height: 170px;
-    border-radius: 5px;
 }
 
 aside section h3 {
@@ -117,7 +113,7 @@ aside section img {
 }
 
 footer {
-    background-color: #666;
+    background-color: rgb(28, 35, 107);
     text-align: center;
     color: #FFF;
     padding: 15px;
