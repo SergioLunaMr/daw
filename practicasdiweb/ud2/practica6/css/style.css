@@ -118,3 +118,8 @@ footer {
     color: #FFF;
     padding: 15px;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}

@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang='es'>
 <head>
@@ -13,6 +10,6 @@
 </head>
 <body>
     <h1>MVC</h1>
-    <p> <?php echo $data["message"]; ?>
+    <p> <?php echo $data["message"]; ?> </p>
 </body>
 </html>
