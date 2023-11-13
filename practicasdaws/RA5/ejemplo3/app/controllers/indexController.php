@@ -6,10 +6,10 @@ class IndexController extends BaseController {
         $data = array("message" => "Hola mundo");
         $this->renderHTML("../app/views/index_view.php", $data);
     }
-    public function SaludaAction($request){
-        $urlDecode = explode("/", $request);
-        $data = array("message" => "Saludos...".end($urlDecode));
-        $this->renderHTML("../views/index_view.php", $data);
-    }
+    // public function SaludaAction($request){
+    //     $urlDecode = explode("/", $request);
+    //     $data = array("message" => "Saludos...".end($urlDecode));
+    //     $this->renderHTML("../views/index_view.php", $data);
+    // }
 }
 ?>

@@ -5,10 +5,13 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <meta name='author' content='SergioLunaMartín'>
-<title>Índice</title>
+<title>Lista de numeros pares</title>
 </head>
 <body>
     <h1>MVC</h1>
-    <p> <?php echo $data["message"]; ?> </p>
+    <h2> <?php echo $data["encabezado"]; ?> </h2>
+    <p> <?php foreach($data["numeros"] as $key=>$value){
+        echo $value . "</br>";
+    } ?> </p>
 </body>
 </html>

@@ -11,10 +11,12 @@ $router -> add(array(
     'path'=>'/^\/$/',
     'action'=>[IndexController::class, 'IndexAction']));
 $request=str_replace(DIRBASEURL,'',$_SERVER['REQUEST_URI']);
-$router = $router->match($request);
-if ($router) {
-    $controllerName = $router['action'][0];
-    $actionName = $router['action'][1];
+$route = $router->match($request);
+var_dump($router);
+var_dump($request);
+if ($route) {
+    $controllerName = $route[0]['action'][0];
+    $actionName = $route[0]['action'][1];
     $controller = new $controllerName;
     $controller->$actionName($request);
 } else {
