@@ -5,7 +5,7 @@ class NumberController extends BaseController {
     public function NumberList(){
         $data = array(  "encabezado" => "Lista de numeros",
                         "numeros" => array());
-    for($i = 0; $i <= 20; $i++){
+    for($i = 0; $i <= 10; $i++){
         if($i%2==0){
             $data["numeros"][]=$i;
         }
