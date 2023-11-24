@@ -1,0 +1,106 @@
+/* Solución con float
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    list-style: none;
+    text-decoration: none;
+}
+
+.submenu>li {
+    float: left;
+}
+
+.submenu li a {
+    background-color: darkblue;
+    color: #FFF;
+    display: block;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+}
+
+.submenu li a:hover {
+    background-color: blue;
+}
+
+.submenu li ul {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+}
+
+.submenu li:hover>ul {
+    display: block;
+}
+
+.submenu li ul li {
+    position: relative;
+}
+
+.submenu li ul li ul {
+    right: -150px;
+    top: 0%;
+} */
+
+/*Solución sin float*/
+body {
+    font-family: sans-serif;
+}
+
+* {
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav > ul > li {
+    display: inline-block;
+}
+
+nav ul li a {
+    background-color: turquoise;
+    color: white;
+    display: block;
+    border: 1px solid;
+    padding: 10px 12px;
+}
+
+nav ul li a:hover {
+    background-color: turquoise;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+}
+
+/* Usando > llegamos al inmediatamente inferior*/
+nav ul li:hover > ul {
+    display:block;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li ul li ul {
+    top: 0px;
+    left: 150px;
+
+}
+
+/*Al elemento que no tenga hijos dentro*/
+nav ul li a:not(:last-child)::after {
+    content: "\25bc";
+    font-size: 9px;
+    padding-left: 6px;
+}

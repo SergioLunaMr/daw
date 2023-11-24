@@ -1,0 +1,16 @@
+.dia {
+    display: inline-block;
+    margin: 10px;
+    min-width: 15%;
+}
+
+.profesor {
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+.asignatura {
+    font-size: 14px;
+    border: 1px solid;
+}
