@@ -1,0 +1,56 @@
+.header {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav > ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav > ul > li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#contenido {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    width: 75%;
+}
+
+.noticias {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.noticias > article {
+    flex: 0 0 33%;
+}
+
+aside {
+    flex: 20% 20%;
+    width: 20%;
+}
+
+footer {
+    text-align: center;
+}
+
+footer > section {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer > section > article {
+    flex: 1;
+    margin: 0 10px;
+}

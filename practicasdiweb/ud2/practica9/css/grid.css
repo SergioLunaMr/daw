@@ -1,0 +1,95 @@
+header {
+    grid-area: header;
+    display: grid;
+    justify-content: center;
+    border: 1px solid;
+}
+
+.navheader {
+    grid-area: navheader;
+}
+
+.navheader > ul {
+    display: grid;
+    list-style: none;
+    align-content: space-evenly;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.navheader > ul > li {
+    border: 1px solid;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    border: 1px solid;
+    display: grid;
+    justify-content: space-evenly;
+    grid-area: footer;
+}
+
+body {
+    display: grid;
+    border: 1px solid;
+    grid-template-areas:    "header header"
+                            "navheader navheader"
+                            "noticias aside"
+                            "noticias aside"
+                            "footer footer";
+    grid-template-columns: 4fr 1fr;
+    
+}
+
+main {
+    border: 1px solid;
+    grid-area: noticias;
+}
+
+.noticias {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.noticias > article {
+    border: 1px solid;
+}
+
+aside {
+    border: 1px solid;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+aside > .publicidad {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-evenly;
+}
+
+aside>section>section {
+    display: grid;
+    border: 1px solid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.publi {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+}
+
+footer > section {
+    display: grid;
+    border: 1px solid;
+    justify-content:flex-start;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}

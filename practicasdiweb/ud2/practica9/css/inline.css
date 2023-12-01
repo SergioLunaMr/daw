@@ -1,0 +1,41 @@
+.header {
+    text-align: center;
+}
+
+nav > ul {
+    text-align: center;
+}
+
+nav > ul > li {
+    display: inline-block;
+}
+
+#contenido{
+    width: 90%;
+    display: inline-block;
+}
+
+main {
+    display: inline-block;
+    width: 75%;
+}
+
+.noticias > article {
+    display: inline-block;
+    width: 33%;
+}
+
+aside {
+    vertical-align: top;
+    display: inline-block;
+    width: 20%;
+}
+
+footer {
+    text-align: center;
+    display: inline;
+}
+
+footer > section > article {
+    display: inline-block;
+}
