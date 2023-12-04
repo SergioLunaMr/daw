@@ -31,29 +31,61 @@ class Animales extends DBAbstractModel
         $this->nombre = $nombre;
     }
 
+    public function setID($id)
+    {
+        $this->id = $id;
+    }
+
     public function getMessage()
     {
         return $this->mensaje;
     }
 
-    public function read($user_data = array())
-    {
-        foreach ($user_data as $campo => $valor) {
-            $$campo = $valor;
-        }
-        $this->query = "INSERT INTO animales(nombre) VALUES(:nombre)";
+    // public function set($user_data = array())
+    // {
+    //     foreach ($user_data as $campo => $valor) {
+    //         $$campo = $valor;
 
-        //$this->parametros['id']= $id;s
+
+    //     }
+
+    //     $this->query = "INSERT INTO animales(nombre) VALUES(:nombre)";
+    //     $this->parametros["nombre"] = $nombre;
+    //     $this->get_results_from_query();
+    //     $this->mensaje = 'Animal agregado correctamente';
+    // }
+
+    public function set()
+    {
+        $this->query = "INSERT INTO animales(nombre) VALUES(:nombre)";
+        //$this->parametros['id']= $id;
         $this->parametros['nombre'] = $this->nombre;
         $this->get_results_from_query();
         //$this->execute_single_query();
-        $this->mensaje = 'SH agregado correctamente';
+        $this->mensaje = 'Animal agregado correctamente';
     }
-    public function update () {}
 
-    public function delete () {}
+    public function get($id = "")
+    {
+        $this->query = "SELECT * FROM animales WHERE id=(:id)";
+        $this->parametros['id'] = $id;
+        $this->get_results_from_query();
+        return $this->rows;
+    }
+    public function edit()
+    {
+        $this->query = "UPDATE animales SET nombre=:nombre WHERE id=:id";
+        $this->parametros['id'] = $this->id;
+        $this->parametros['nombre']=$this->nombre;
+        var_dump($this->parametros);
+        $this->get_results_from_query();
+    }
 
-    public function create () {}
+    public function delete()
+    {
+    }
+
+
 }
 
 

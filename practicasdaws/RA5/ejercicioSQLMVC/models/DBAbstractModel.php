@@ -15,9 +15,9 @@ abstract class DBAbstractModel
     protected $rows = array(); //array con los datos de salida
 
     //Metodos abstractos para implementar en los diferentes módulos. CRUD
-    abstract protected function read(); //Read
-    abstract protected function create(); //Create
-    abstract protected function update(); //Update
+    abstract protected function get(); //Read
+    abstract protected function set(); //Create
+    abstract protected function edit(); //Update
     abstract protected function delete(); //Delete
     #Crear conexión a la base de datos.
     protected function open_connection()
@@ -72,8 +72,9 @@ abstract class DBAbstractModel
             if (preg_match_all('/(:\w+)/', $this->query, $_named, PREG_PATTERN_ORDER)) {
                 $_named = array_pop($_named);
                 foreach ($_named as $_param) {
+                    $_stmt->bindValue($_param, $this->parametros[substr($_param, 1)]);
                 }
-                $_stmt->bindValue($_param, $this->parametros[substr($_param, 1)]);
+
             }
         }
         try {
