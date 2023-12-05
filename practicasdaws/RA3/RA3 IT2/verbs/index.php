@@ -12,7 +12,9 @@ $errorrange=false;
 $nverbs;
 $naciertos;
 
+$corregido=false;
 $respuestas=[];
+$correcion="";
 
 function isInRange($number) {
     $number >= 1 && $number <= sizeof($GLOBALS["verbos"]) ? $flag = true : $flag = false;
@@ -22,11 +24,13 @@ if(isset($_POST["resolver"])){
 
 }
 else if(isset($_POST["corregir"])){
+    $corregido=true;
     foreach ($_POST as $name=>$respuesta){
         if($name!="corregir"){
             $respuestas[$name]=$respuesta;
         }
     }
+    $correccion=corregirVerbs($respuestas);
 }
 else if (isset($_POST["enviar"])) {
     $naciertos = $_POST["naciertos"];
@@ -35,7 +39,7 @@ else if (isset($_POST["enviar"])) {
         isInRange($nverbs) ? $formenviado=true : $errorrange=true;
     }
     else {
-        $errorinput=true;;
+        $errorinput=true;
     }
 }
 ?>
@@ -78,6 +82,9 @@ else if (isset($_POST["enviar"])) {
     <?php
     if($formenviado){
         randomizerVerbs($nverbs, $naciertos);
+    }
+    else if($corregido){
+        echo $correccion;
     }
     ?>
 

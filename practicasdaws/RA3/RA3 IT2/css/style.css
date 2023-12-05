@@ -2,6 +2,11 @@
     color:red;
 }
 
+.acierto {
+    color:green;
+}
+
+
 .block {
     display: inline-block;
     width: 20%;
