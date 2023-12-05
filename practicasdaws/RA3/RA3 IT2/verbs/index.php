@@ -12,12 +12,23 @@ $errorrange=false;
 $nverbs;
 $naciertos;
 
+$respuestas=[];
+
 function isInRange($number) {
     $number >= 1 && $number <= sizeof($GLOBALS["verbos"]) ? $flag = true : $flag = false;
     return $flag;
 }
+if(isset($_POST["resolver"])){
 
-if (isset($_POST["enviar"])) {
+}
+else if(isset($_POST["corregir"])){
+    foreach ($_POST as $name=>$respuesta){
+        if($name!="corregir"){
+            $respuestas[$name]=$respuesta;
+        }
+    }
+}
+else if (isset($_POST["enviar"])) {
     $naciertos = $_POST["naciertos"];
     $nverbs = $_POST["nverbs"];
     if(num_test($nverbs)) {
@@ -62,7 +73,7 @@ if (isset($_POST["enviar"])) {
     ?>
     </label>
         <br>
-        <button name="enviar" value="enviar">Enviar</button>
+        <button type="submit" name="enviar" value="enviar">Enviar</button>
     </form>
     <?php
     if($formenviado){
