@@ -15,3 +15,11 @@
 .verboinsertar {
     width: 60px;
 }
+
+img {
+    display: inline;
+}
+
+.pregunta {
+    display: inline;
+}
