@@ -78,6 +78,7 @@ else if (isset($_POST["enviar"])) {
     </label>
         <br>
         <button type="submit" name="enviar" value="enviar">Enviar</button>
+        <a href='../index.php' class='boton'>Volver al inicio</a>
     </form>
     <?php
     if($formenviado){

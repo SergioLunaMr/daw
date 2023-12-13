@@ -35,6 +35,7 @@ $stringaux = "";
         }
         // Procesamiento del formulario
         $testId = $_POST['test'];
+        echo "<h1>Test ". $aTests[$testId-1]['idTest']. " - " . $aTests[$testId-1]['Permiso'] . " - " . $aTests[$testId-1]['Categoria'] . "</h1>";
         // Muestra el formulario con las preguntas del test seleccionado
         echo "<form method='post' action='index.php'>";
         foreach ($aTests[$testId - 1]['Preguntas'] as $pregunta) {
@@ -81,6 +82,7 @@ $stringaux = "";
             echo "<input name='corregir' type='submit' value='Finalizar Test'>";
             echo "<input type='hidden' name='test' value='$testId'>";
             echo "</form>";
+            echo "<a href='index.php' class='boton'><- Volver atrás</a>";
         }
     } else {
         // Muestra el formulario de selección de tests
@@ -93,10 +95,7 @@ $stringaux = "";
         echo "</select>";
         echo "<input type='submit' name='iniciar' value='Iniciar Test'>";
         echo "</form>";
-    }
-
-    if (isset($testId)) {
-
+        echo "<a href='../index.php' class='boton'>Volver al inicio</a>";
     }
     ?>
 </body>
