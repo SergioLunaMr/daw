@@ -1,0 +1,18 @@
+:root{
+
+	--primary-text-color: #1B1D1D;
+	--secondary-text-color: #FFF;
+	--secondary-color:  rgba(245,246,246,0.8);
+	--color-formula1: #FF1E00;
+	--primary-color-wec: #00236F;
+	--secondary-color-wec: #5CBB0A;
+	--color-dakar: #C13A1C;
+	--color-indy:#0075C9;
+	--color-alpine: #0071C2;
+	--color-AM: #00352E;
+	
+	--degradado-dakar-indy: linear-gradient(to right,var(--color-dakar),var(--color-indy)) no-repeat;
+	--degradado-wec: linear-gradient(to right,var(--primary-color-wec),var(--secondary-color-wec)) no-repeat;
+	--degradado-AM-alpine-wec-f1: linear-gradient(to right,var(--color-AM), var(--color-alpine),var(--primary-color-wec),var(--color-formula1)) no-repeat;
+
+}

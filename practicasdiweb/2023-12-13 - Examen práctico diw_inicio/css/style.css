@@ -1,0 +1,183 @@
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: var(--primary-text-color);
+    background: url(../imagenes/huella_rueda.png);
+}
+/* 
+Header
+*/
+header {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    background: var(--degradado-AM-alpine-wec-f1);
+}
+
+.imgheader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+}
+
+.imgheader > article {
+    margin: auto;
+    display: flex;
+    height: 80%;
+    width: 80%;
+}
+
+.imgheader > article > img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+#textoheader {
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#textoheader > article {
+    display: flex;
+}
+
+#textoheader1 {
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--secondary-text-color);
+    text-shadow: 1px 1px 2px var(--color-AM);
+}
+
+#textoheader2 {
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--color-AM);
+    text-shadow: 1px 1px 2px var(--secondary-text-color);
+}
+
+/*
+Contenido
+*/
+#titlemodalidades {
+    margin: auto;
+}
+#contenido {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 40px;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 2fr;
+}
+
+main {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 5%;
+    
+    padding: 0;
+}
+
+#modalidades {
+    border: 1px solid black;
+    padding: 2%;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    background-color: white;
+    width: 100%;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+
+#modalidades > article {
+    width: 45%;
+    margin: 2%;
+}
+
+#modalidades > article > img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+#comoque33 {
+    border: 1px solid black;
+    padding: 2%;
+    background-color: white;
+    width: 100%;
+}
+
+#comoque33 > article > img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+#title33 {
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+}
+/*
+Aside
+*/
+#imgpalmares {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+}
+
+#titlepalmares {
+    margin-right: 50%;
+    margin-left: 50%;
+}
+
+aside {
+    display: inline;
+    vertical-align: top;
+    margin-right: 2%;
+    margin-left: 2%;
+    margin-top: 5%;
+
+    padding: 0;
+}
+
+#palmares {
+    border: 1px solid black;
+    vertical-align: top;
+    background-color: white;
+}
+
+#titledakar {
+    background-color: var(--degradado-dakar-indy);
+}
+
+#titlewec {
+    background: var(--degradado-wec);
+}
+
+#titlered {
+    background: var(--color-formula1);
+}
