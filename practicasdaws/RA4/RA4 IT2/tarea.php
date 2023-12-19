@@ -6,10 +6,10 @@ session_start();
 include("lib/functions.php");
 
 if (isset($_POST["recoger"])) {
-    $tarea = test_input($_POST["tarea"]);
+    $tarea = test_input($_POST["tarea"]) . "\n";
     $nombrefichero = "model/" . $_SESSION["user"] . "_tareas.txt";
     $archivo = fopen($nombrefichero, "a");
-    $cabecera=$_SESSION["dia"] . " de " . $_SESSION["mes"] . " de " . $_SESSION["anio"] . "\n";
+    $cabecera=$_SESSION["dia"] . " de " . $_SESSION["mes"] . " de " . $_SESSION["anio"];
     fwrite($archivo, $cabecera);
     fwrite($archivo, $tarea);
     fclose($archivo);
