@@ -6,7 +6,6 @@
  * calendario mensual correspondiente. Marcar el día actual en verde y los festivos
  * en rojo.
  */
-
 $anio=date("Y");
 $mes=date("n");
 $dias=30;
