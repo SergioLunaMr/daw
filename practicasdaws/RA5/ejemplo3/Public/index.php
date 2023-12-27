@@ -30,8 +30,8 @@ $router->add(
     )
 );
 $request = str_replace(DIRBASEURL, "", $_SERVER["REQUEST_URI"]);
+var_dump($request);
 $route = $router->match($request);
-
 if ($route) {
     $controllerName = $route[0]["action"][0];
     $actionName = $route[0]["action"][1];
