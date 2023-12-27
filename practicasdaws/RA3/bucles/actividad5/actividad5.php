@@ -6,7 +6,6 @@
  * calendario mensual correspondiente. Marcar el día actual en verde y los festivos
  * en rojo.
  */
-
 $anio=date("Y");
 $mes=date("n");
 $dias=30;
@@ -28,9 +27,14 @@ $html="<table>";
 <body>
 <?php
 
-
 switch($mes){
-    case "1"|"3"|"5"|"7"|"8"|"10"|"12": {
+    case "1":
+    case "3":
+    case "5":
+    case "7":
+    case "8":
+    case "10":
+    case "12": {
         $dias=31;
         break;
     }
@@ -40,7 +44,7 @@ switch($mes){
     }
 }
 $diasemana=date('w', strtotime(("1"."-".$mes."-".$anio)));
-for($i=1;$i<$dias+$diasemana;$i++){
+for($i=1;$i<=$dias+$diasemana;$i++){
     if($i==1){
         $html=$html . "<tr>";
     }
