@@ -1,0 +1,12 @@
+.menu {
+    display: inline;
+}
+
+#carrito {
+    margin: 0 50px 0 50px;
+}
+
+img {
+    width: 100px;
+    height: auto;
+}
