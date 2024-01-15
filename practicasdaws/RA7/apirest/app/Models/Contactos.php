@@ -4,7 +4,7 @@ namespace App\Models;
 
 require_once("DBAbstractModel.php");
 
-class Mascota extends \DBAbstractModel
+class Mascota extends DBAbstractModel
 {
     //Singleton
     private static $instancia;
@@ -27,9 +27,9 @@ class Mascota extends \DBAbstractModel
     private $telefono = "";
     private $email = "";
 
-    private $created_at;
+    private $created_at="";
 
-    private $updated_at;
+    private $updated_at="";
 
     public function setNombre($nombre)
     {
@@ -96,7 +96,7 @@ class Mascota extends \DBAbstractModel
 
     public function get($id = "")
     {
-        $this->query = "SELECT * FROM animales WHERE id=(:id)";
+        $this->query = "SELECT * FROM contactos WHERE id=(:id)";
         $this->parametros['id'] = $id;
         $this->get_results_from_query();
         return $this->rows;

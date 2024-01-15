@@ -1,11 +1,9 @@
 <?php
-//Cargamos los parámetros
-include("../app/Config/config.php");
-//Preparamos la autocarga de clases
-require_once '../vendor/autoload.php';
+require ".../bootstap.php";
+
 //Usamos las clases
-use App\Controllers\IndexController;
 use App\Core\Router;
+use App\Controllers\IndexController;
 
 $router = new Router();
 $router->add(array(
