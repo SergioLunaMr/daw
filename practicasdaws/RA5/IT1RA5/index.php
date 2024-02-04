@@ -20,19 +20,27 @@ include("config/config.php");
     if (isset($_POST["pedir"])) {
         $carritoTemp = unserialize($_SESSION["carrito"]);
         $_SESSION["carrito"] = serialize(new Carrito());
-        $escribir = $_SESSION["comanda"];
+        $comandaContent;
+        foreach ($carritoTemp->getProductos() as $producto) {
+            if (get_class($producto) != "Pizza") {
+                $comandaContent = $comandaContent . "Nombre: " . $producto->getNombre() . "\nPrecio: " . $producto->getPrecio() . "€\nCantidad: " . $producto->getCantidad() . "\n";
+            } else {
+                $comandaContent = $comandaContent . "Nombre: " . $producto->getNombre() . "\nPrecio: " . $producto->getPrecioElegido() . "€\nCantidad: " . $producto->getCantidad() . "\n";
+            }
+        }
+        $comandaContent = $comandaContent . "El total es: " . $carritoTemp->sacarCuenta() . " €";
         $nombrefichero = "ticket" . date('m-d-Y h:i:s a', time()) . ".txt";
         $nombrefichero = join("_", explode(" ", $nombrefichero));
         $nombrefichero = join("-", explode(":", $nombrefichero));
         $archivo = fopen($nombrefichero, "w");
-        fputs($archivo, $escribir);
+        fwrite($archivo, $comandaContent);
         fclose($archivo);
 
         $nombreComanda = "comanda" . date('m-d-Y h:i:s a', time()) . "pendiente.txt";
         $nombreComanda = join("_", explode(" ", $nombrefichero));
         $nombreComanda = join("-", explode(":", $nombrefichero));
         $archivoComanda = fopen($nombreComanda, "w");
-        fputs($archivoComanda, $escribir);
+        fwrite($archivoComanda, $comandaContent);
         fclose($archivoComanda);
         include("include/closesession.php");
     }
