@@ -14,3 +14,17 @@
     font-size: 14px;
     border: 1px solid;
 }
+
+.fallo {
+    color: red;
+    background-color: gray;
+}
+
+.acierto {
+    color: green;
+    background-color: gray;
+}
+
+.solucion {
+    color: green;
+}

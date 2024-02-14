@@ -1,0 +1,217 @@
+@super: #fee03d;
+@super_light: #fffcd8;
+@super_dark: #c97b13;
+@kaio: #d23048;
+@kaio_light: #e384ac;
+@kaio_dark: #ce2045;
+@god: #d40360;
+@god_light: #fe83ad;
+@god_dark: #9d0045;
+@blue: #5bced7;
+@blue_light: #d8ecec;
+@blue_dark: #2e8ca4;
+@ultra: #c7cad4;
+@ultra_light: #f2f2f7;
+@ultra_dark: #393e66;
+@primaryColor: @ultra_dark;
+@secondaryColor: @kaio;
+@primaryTextColor: #000000;
+@secondaryTextColor: #FFFFFF;
+
+html {
+    font-family: 'Roboto';
+    font-size: 16px;
+    background-color: @primaryColor;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 5vh;
+    background: url(../img/fondo_Goku.jpg) fixed no-repeat left;
+    background-size: auto 100%;
+
+    @media only screen and (min-width: 1200px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        background-position: center;
+    }
+}
+
+nav {
+    flex-direction: column;
+    @media only screen and (min-width: 1200px) {
+        flex-direction: row;
+        align-items: center;
+        padding: 1vh;
+        border-radius: 1%;
+        column-gap: 4vh;
+    }
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), ;
+    margin: 5vh;
+    display: flex;
+
+}
+
+#home {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+
+    .home-text {
+        text-align: center;
+        vertical-align: middle;
+        background: none;
+    }
+
+    #video-goku {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        z-index: -1;
+    }
+}
+
+#articles {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @media only screen and (min-width: 830px) {
+        order: 2;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        column-gap: 1vh;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        order: 1;
+        flex-basis: 70%;
+    }
+
+    .article-goku {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), ;
+        margin-bottom: 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5vh;
+        border-radius: 1%;
+
+        @media only screen and (min-width: 830px) {
+            flex-grow: 1;
+            flex-basis: 35%;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            flex-grow: 1;
+            flex-basis: 20%;
+        }
+
+        .article-title {
+            font-size: 25px;
+            color: @primaryColor;
+            align-self: flex-start;
+        }
+
+        .article-subtitle {
+            display: none;
+
+            @media only screen and (min-width: 830px) {
+                display: block;
+            }
+        }
+
+        .article-imagen {
+            flex-basis: 50%;
+            padding: 2vh;
+            max-width: 50%;
+        }
+
+        .article-content {
+            text-align: justify;
+        }
+
+    }
+}
+
+#asides {
+    display: none;
+
+    @media only screen and (min-width: 1200px) {
+        margin-left: 1vh;
+        flex-basis: 20%;
+        margin-bottom: 1vh;
+        display: block;
+        order: 2;
+    }
+    >aside {
+        display: block;
+
+    }
+}
+
+aside {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), ;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh;
+    border-radius: 1%;
+
+    @media only screen and (min-width: 1200px) {
+        display: none;
+    }
+
+    .aside-title {
+        padding-bottom: 5vh;
+        font-size: 25px;
+        color: @secondaryColor;
+        align-self: flex-start;
+    }
+}
+
+#top {
+    @media only screen and (min-width: 830px) {
+        order: 1;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        order: 2;
+    }
+}
+
+#middle {
+    display: none;
+
+    @media only screen and (min-width: 1200px) {
+        order: 3;
+    }
+}
+
+#bottom {
+    display: none;
+
+    @media only screen and (min-width: 1200px) {
+        order: 4;
+    }
+}
+
+footer {
+    margin-left: 5vh;
+    margin-right: 5vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), ;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vh;
+
+    .footer-text-secondary {
+        color: @primaryColor;
+    }
+}

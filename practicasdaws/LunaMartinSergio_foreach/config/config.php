@@ -160,11 +160,11 @@ $GLOBALS['horario'] = array(
 
 #array de idiomas
 // Este array simple unidimensional tiene todos los idiomas a elegir.
-$GLOBALS["idiomas"] = array("Español", "Inglés", "Francés", "Aleman", "Italiano", "Portugués");
+define("idiomas", array("Español", "Inglés", "Francés", "Aleman", "Italiano", "Portugués"));
 #array con el cuestionario.
 // En este array unidimensional encontramos que cada uno de sus índices tienen a su vez otro array indexado, cada uno
 //con los valores de las preguntas.
-$GLOBALS["preguntas"] = array(
+define("preguntas", array(
       array(
             "pregunta" => "The room where secretaries work is called an .....",
             "Tipo" => "text",
@@ -219,5 +219,4 @@ $GLOBALS["preguntas"] = array(
             "Acierto" => 1,
             "Fallo" => -0.25
       )
-);
-?>
+));
