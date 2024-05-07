@@ -3,6 +3,7 @@
 require_once '../vendor/autoload.php';
 //Usamos las clases
 use App\Controller\IndexController;
+use App\Controller\ProductsController;
 use App\Core\Router;
 
 if(!isset($_SESSION["auth"])){
@@ -16,10 +17,10 @@ $router->add(array(
     'action' => [IndexController::class, 'indexAction']));
 
 $router->add(array(
-    'name' => 'numeroPar',
-    'path' => '/^\/[0-9]+$/',
-    'action' => [IndexController::class, 'numAction']));
-
+    'name' => 'list',
+    'path' => '/^\/(lista)(Pizzas|Bebidas|Postres)$/',
+    'action' => [ProductsController::class, 'listarProductosAction']
+));
 
 $request =  $_SERVER['REQUEST_URI'];
 $route = $router->match($request);

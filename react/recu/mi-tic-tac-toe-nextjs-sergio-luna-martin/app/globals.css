@@ -1,0 +1,16 @@
+.minombre {
+  color: green;
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid gray;
+  background-color: white;
+}
+
+.board-row {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,33 @@
+EQUIPOS
+
+Modelo
+Nuevo
+Edit
+Get
+Insert
+
+EquiposPorEstado
+EquiposPorAula
+
+Rutas
+
+equipos/ -- Controller indexAction -- index_view
+equipos/add -- EquiposController -- addAction -- add_view
+equpos/edit/{n} -- EquiposController -- updateAction -- edit_view
+equpos/del/{n} -- EquiposController -- deleteAction
+equipos/search -- EquiposController -- searchAction
+
+Controlador
+
+EquiposController
+
+En la pantalla de index_view
+
+LISTADO EQUIPOS
+
+[    ] BUSCAR (+)
+
+EQUIPO X EDIT DEL
+EQUIPO Y EDIT DEL
+EQUIPO Z EDIT DEL
+etc...
