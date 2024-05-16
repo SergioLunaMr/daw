@@ -7,6 +7,7 @@ class Aulas extends DBAbstractModel {
     private $descripcion;
     private $num_mesas;
     private static $instancia;
+    private $incidencias = array();
 
     public static function getInstancia() {
         if(!self::$instancia instanceof self) {
@@ -24,15 +25,15 @@ class Aulas extends DBAbstractModel {
         $this->query = "SELECT aulas WHERE id=:id";
         $this->parametros["id"] = $this->id;
         $this->getResultsFromQuery();
-        $this->mensaje = "Aulas listada";
-        return $this;
+        $this->mensaje = "Aula listada";
+        return $this->rows;
     }
 
     public function getAll() {
-        $this->query = "SELECT * FROM productos";
+        $this->query = "SELECT * FROM aulas";
         $this->getResultsFromQuery();
         $this->mensaje = "Aulas mostradas.";
-        return $this;
+        return $this->rows;
     }
 
     public function set(){
@@ -63,6 +64,13 @@ class Aulas extends DBAbstractModel {
         $this->getResultsFromQuery();
         $this->mensaje="Aula eliminada.";
         return $this;
+    }
+
+    public function getEstadosDescripcion() {
+        $this->query = "SELECT * FROM t_descripcion_aulas";
+        $this->getResultsFromQuery();
+        $this->mensaje = "Descripciones mostradas.";
+        return $this->rows;
     }
 
     public function getId() {
@@ -97,6 +105,10 @@ class Aulas extends DBAbstractModel {
 
     public function setNumMesas($num_mesas){
         $this->num_mesas = $num_mesas;
+    }
+
+    public function getIncidenciasAula() {
+        //METER DENTRO DE GET AULAS
     }
 
 }

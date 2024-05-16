@@ -1,0 +1,9 @@
+.aula-parent {
+    display: flex;
+    justify-content: center;
+}
+
+.aula{
+    border: 1px solid black;
+    text-align: center;
+}

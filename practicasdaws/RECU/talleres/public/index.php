@@ -25,9 +25,27 @@ $router->add([
 ]);
 
 $router->add([
-    'name'=>'admin',
-    'path'=>'/^\/admin$/',
-    'action' => [AdminController::class, 'IndexAction']
+    'name'=>'addAulaForm',
+    'path'=>'/^\/aula\/add\/form$/',
+    'action' => [AulasController::class, 'AulaAddFormAction']
+]);
+
+$router->add([
+    'name'=>'addAula',
+    'path'=>'/^\/aula\/add$/',
+    'action' => [AulasController::class, 'AulaAddAction']
+]);
+
+$router->add([
+    'name'=>'editAula',
+    'path'=>'/^\/aula\/edit\/[0-9]+$/',
+    'action' => [AulasController::class, 'AulaEditAction']
+]);
+
+$router->add([
+    'name'=>'deleteAula',
+    'path'=>'/^\/aula\/delete\/[0-9]+$/',
+    'action' => [AdminController::class, 'AulaDeleteAction']
 ]);
 
 $router->add([
@@ -37,3 +55,12 @@ $router->add([
 ]);
 
 $request = $_SERVER['REQUEST_URI'];
+$route = $router->match($request);
+if ($route) {
+    $controllerName = $route['action'][0];
+    $actionName = $route['action'][1];
+    $controller = new $controllerName;
+    $controller->$actionName($request);
+} else {
+    echo "No route";
+}
