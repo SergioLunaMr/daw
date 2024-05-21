@@ -21,18 +21,18 @@ class Equipos extends DBAbstractModel {
 
     //getByID
     public function get($id = ""){
-        $this->query = "SELECT aulas WHERE id=:id";
+        $this->query = "SELECT equipos WHERE id=:id";
         $this->parametros["id"] = $this->id;
         $this->getResultsFromQuery();
-        $this->mensaje = "Aulas listada";
-        return $this;
+        $this->mensaje = "Equipo listado";
+        return $this->rows;
     }
 
     public function getAll() {
-        $this->query = "SELECT * FROM productos";
+        $this->query = "SELECT * FROM equipos";
         $this->getResultsFromQuery();
-        $this->mensaje = "Aulas mostradas.";
-        return $this;
+        $this->mensaje = "Equipos mostrados.";
+        return $this->rows;
     }
 
     public function set(){
@@ -42,7 +42,7 @@ class Equipos extends DBAbstractModel {
         $this->parametros["num_mesas"] = $this->num_mesas;
         $this->getResultsFromQuery();
         $this->mensaje="Aula añadida.";
-        return $this;
+        return $this->rows;
     }
 
     public function edit(){
@@ -53,7 +53,7 @@ class Equipos extends DBAbstractModel {
         $this->parametros["num_mesas"] = $this->num_mesas;
         $this->getResultsFromQuery();
         $this->mensaje="Aula actualizada.";
-        return $this;
+        return $this->rows;
     }
 
     public function delete($id=""){
@@ -62,7 +62,7 @@ class Equipos extends DBAbstractModel {
         $this->parametros["id"] = $id;
         $this->getResultsFromQuery();
         $this->mensaje="Aula eliminada.";
-        return $this;
+        return $this->rows;
     }
 
     public function getId() {

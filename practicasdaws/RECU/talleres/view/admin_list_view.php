@@ -42,6 +42,20 @@
         <a href="/admin/reservas"><div class="panel-control-option">Reservas</div></a>
         <a href="/admin/ubicaciones"><div class="panel-control-option">Ubicaciones</div></a>
         </div>
+        <div class="panel-control-cambios">
+            <?php
+            $html=""; 
+            $contador=0;
+            foreach($data[0] as $key => $valor ){
+                $html.="<div><h2>".++$contador."</h3>";
+                foreach ($valor as $key => $value) {
+                    $html.="<div>".$key. " = " . $value . "</div>";
+                }
+                $html.="</div>";
+            }
+            echo $html;
+            ?>
+        </div>
     </main>
 </body>
 

@@ -13,38 +13,49 @@
 <body>
     <div class="banner">
         <div class="banner-title">
-            <h1>Gestión de Aulas</h1>
+            <h1>Detalles de Aula</h1>
         </div>
-        <div class="banner-perfil">Bievenido, <?php echo $_SESSION["PerfilUsuario"]["Nombre"]; ?></div>
+        <div class="banner-perfil">Bienvenido, <?php echo $_SESSION["PerfilUsuario"]["Nombre"]; ?></div>
+        <a href="/">
+            <div class="banner-home">Volver a Inicio</div>
+        </a>
         <?php
         if ($_SESSION["PerfilUsuario"]["Perfil"] == "Profesor") {
             echo "<a href='/admin'><div class='admin-button'>Panel de Administrador</div></a>";
         }
-        if ($_SESSION["PerfilUsuario"]["Nombre"] == "Invitado") {
+        if ($_SESSION["PerfilUsuario"]["Perfil"] == "Invitado") {
             echo "<a href='/login'><div class='login-button'>Iniciar sesión</div></a>";
         } else {
             echo "<a href='/logout'><div class='logout-button'>Desconectarse</div></a>";
-        } ?>
+        }
+        ?>
     </div>
     <div class="banner-title">
-        <h2>Listado de Aulas</h2>
+        <h2>Código Aula: <?php echo $data[1][0]["codigo"]?></h2>
     </div>
-    <!-- <p><a href='/aula/add/form'>AÑADIR AULA</a></p> -->
     <div class="aula-parent">
     <?php
-    foreach ($data as $key => $value) {
-        $html = "<a href='/aula/details/" . $value["id"] .
-            "'><div class='aula-container'>
-            <div class='aula-name'>Código: " .
-            $value["codigo"] .
+    foreach ($data[0] as $key => $value) {
+        $html = "<div class='aula-container'>" .
+            "<div class='equipo-puesto'Puesto:" .
+        $value["puesto"] .
             "</div>" .
-            "<div class='aula-mesas'>Mesas: " .
-            $value["numero_mesas"] .
+            "<div class='equipo-codigo'>Código: " .
+        $value["codigo"] .
             "</div>" .
-            "<div class='aula-grupo'>Grupo: " .
-            $value["descripcion_grupo"] .
+            "<div class='equipo-descripcion'>Descripción: " .
+        $value["descripcion"] .
             "</div>" .
-            "</div></a>";
+            "<div class='equipo-referencia'>Referencia: " .
+        $value["referencia_JA"] .
+            "</div>" .
+            "<div class='equipo-imagen'>" .
+        $value["imagen"] .
+            "</div>" .
+            "<div class='equipo-estado'>Estado: " .
+        $value["estado"] .
+            "</div>" .
+            "</div>";
         // "<div>".
         //  "<a href='/aula/edit/". $value["id"] ."'>EDITAR</a><br>".
         //  "<a href='/aula/delete/". $value["id"] ."'>BORRAR</a>".

@@ -2,6 +2,7 @@
 //Preparamos la autocarga de clases
 require_once '../vendor/autoload.php';
 //Usamos las clases
+use App\Controller\IndexController;
 use Dotenv\Dotenv;
 use App\Core\Router;
 use App\Controller\AulasController;
@@ -16,18 +17,87 @@ define('DBPASS', $_ENV['DBPASS']);
 define('DBNAME', $_ENV['DBNAME']);
 define('DBPORT', $_ENV['DBPORT']);
 
+session_start();
+if(!isset($_SESSION["PerfilUsuario"])){
+    $_SESSION["PerfilUsuario"]=["Perfil"=>"Invitado", "Nombre"=>"Invitado"];
+}
+
 $router = new Router();
 
 $router->add([
     'name'=>'home',
     'path'=>'/^\/$/',
-    'action' => [AulasController::class, 'IndexAction']
+    'action' => [IndexController::class, 'indexAction']
 ]);
 
 $router->add([
-    'name'=>'addAulaForm',
-    'path'=>'/^\/aula\/add\/form$/',
-    'action' => [AulasController::class, 'AulaAddFormAction']
+    'name'=>'login',
+    'path'=>'/^\/login+/',
+    'action' => [IndexController::class, 'loginAction']
+]);
+
+$router->add([
+    'name'=>'logout',
+    'path'=>'/^\/logout$/',
+    'action' => [IndexController::class, 'logoutAction']
+]);
+
+$router->add([
+    'name'=>'admin',
+    'path'=>'/^\/admin$/',
+    'action' => [IndexController::class, 'adminAction']
+]);
+
+
+$router->add([
+    'name'=>'aulaDetails',
+    'path'=>'/^\/aula\/details\/[0-9]+$/',
+    'action'=> [AulasController::class, 'listAction']
+]);
+
+
+///
+
+$router->add([
+    'name'=>'adminAulas',
+    'path'=>'/^\/admin\/aulas$/',
+    'action' => [AdminController::class, 'aulasAction']
+]);
+
+$router->add([
+    'name'=>'adminEquipos',
+    'path'=>'/^\/admin\/equipos$/',
+    'action' => [AdminController::class, 'equiposAction']
+]);
+
+$router->add([
+    'name'=>'adminGrupos',
+    'path'=>'/^\/admin\/grupos$/',
+    'action' => [AdminController::class, 'gruposAction']
+]);
+
+$router->add([
+    'name'=>'adminAlumnos',
+    'path'=>'/^\/admin\/alumnos$/',
+    'action' => [AdminController::class, 'alumnosAction']
+]);
+
+$router->add([
+    'name'=>'adminIncidencias',
+    'path'=>'/^\/admin\/incidencias$/',
+    'action' => [AdminController::class, 'incidenciasAction']
+]);
+
+$router->add([
+    'name'=>'adminReservas',
+    'path'=>'/^\/admin\/reservas$/',
+    'action' => [AdminController::class, 'reservasAction']
+]);
+
+$router->add([
+    'name'=>'adminUbicacions',
+    'path'=>'/^\/admin\/ubicaciones$/',
+    'action' => [AdminController::class, 'ubicacionesAction']
 ]);
 
 $router->add([
@@ -48,11 +118,7 @@ $router->add([
     'action' => [AdminController::class, 'AulaDeleteAction']
 ]);
 
-$router->add([
-    'name'=>'adminAulas',
-    'path'=>'/^\/admin\/aulas$/',
-    'action' => [AulasController::class, 'AdminAulasAction']
-]);
+
 
 $request = $_SERVER['REQUEST_URI'];
 $route = $router->match($request);

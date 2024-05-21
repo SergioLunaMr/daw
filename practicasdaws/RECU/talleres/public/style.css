@@ -1,3 +1,8 @@
+a {
+   text-decoration: none;
+   color: black;
+}
+
 .aula-parent {
     display: flex;
     justify-content: center;
@@ -6,4 +11,98 @@
 .aula{
     border: 1px solid black;
     text-align: center;
+}
+
+.banner {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.banner-title {
+    margin: 1%;
+    flex-basis: 50%;
+    flex-grow: 1;
+}
+
+.banner-perfil {
+    text-align: center;
+    margin: 1%;
+}
+
+.banner-home {
+    padding: 10px;
+    border-radius: 15%;
+    border: 1px solid blue;
+    margin: 5%;
+}
+
+.login-button {
+    padding: 10px;
+    border-radius: 15%;
+    border: 1px solid blue;
+    margin: 5%;
+}
+
+.logout-button {
+    padding: 10px;
+    border-radius: 15%;
+    border: 1px solid blue;
+    margin: 5%;
+}
+
+.admin-button {
+    padding: 10px;
+    border-radius: 15%;
+    border: 1px solid blue;
+    margin: 5%;
+}
+
+.aula-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.aula-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.login-form {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+form {
+    border: 1px solid black;
+    margin: 10%;
+    padding: 40px;
+}
+
+.panel-control {
+    text-align: center;
+    width: 30%;
+    background-color: blue;
+}
+
+.panel-control-option {
+    color: white;
+    padding: 10px;
+    margin: 5%;
+}
+
+.panel-control-cambios {
+    text-align: center;
+    margin-left: 4%;
+}
+
+main {
+    display: flex;
 }
